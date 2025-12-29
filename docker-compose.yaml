@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  usermanagement-application:
+    image: usermanagement-application-image:latest
+    container_name: usermanagement-application
+    ports:
+      - "8082:8081"
+    networks:
+      - user-network
+    depends_on:
+      - mysql-db
+  
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: Nuvelabs123$
+      MYSQL_DATABASE: user-db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - user-network
+
+networks:
+  user-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  
