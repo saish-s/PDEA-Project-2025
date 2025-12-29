@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package -DskipTest
 
 # Run Stage
-FROM FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from build /app/target/*.jar app.jar
 EXPOSE 8081
