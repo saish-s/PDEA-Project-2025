@@ -15,7 +15,7 @@ services:
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: Nuvelabs123$
-      MYSQL_DATABASE: user-db
+      MYSQL_DATABASE: userdb
     ports:
       - "3307:3306"
     volumes:
