@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy with Compose') {
             steps {
-                sh 'Docker compose up -d'
+                sh 'docker compose up -d'
             }
         }
         stage('Cleanup') {
