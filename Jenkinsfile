@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'git@github.com:saish-s/Project-PDEA-01.git'
+                git branch: 'main', url: 'https://github.com/saish-s/PDEA-Project-2025.git'
             }
         }
         stage('Build Maven') {
